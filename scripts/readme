@@ -1,0 +1,25 @@
+source code in paper "Accurate Diagnosis of Colorectal Cancer Based on Histopathology Images Using Artificial Intelligence"
+
+Abstract
+Background: Accurate and robust pathological image analysis for colorectal cancer (CRC) diagnosis is time-consuming and knowledge-intensive, but is essential for CRC patients’ treatment. The current heavy workload of pathologists in clinics/hospitals may easily lead to unconscious misdiagnosis of CRC based on their daily image analyses. 
+
+Methods: Based on a state-of-the-art transfer-learned deep convolutional neural network in artificial intelligence (AI), we proposed a novel patch aggregation strategy for clinic CRC prediction/diagnosis using weakly-labeled pathological whole slide image (WSI) patches. This approach was trained and validated using an unprecedented and enormously large number of 170,099 patches, >14,680 WSIs, from >9,631 subjects that covered diverse and representative clinical cases from multi-independent-sources across China, U.S., and Germany. 
+
+Results: Our innovative AI tool was consistently nearly perfectly agreed with (average Kappa-statistic 0.896) and even often better than most of the experienced expert pathologists when tested in diagnosing CRC WSIs from multi-centers. The average area under the receiver operating characteristics curve (AUC) of AI was greater than that of the pathologists (0.988 vs 0.970) and achieved the best performance among the application of other AI methods to CRC diagnosis. Our AI-generated heatmap highlights the image regions of cancer tissue/cells. 
+
+Conclusions: This first-ever generalizable AI system can handle large amounts of WSIs consistently and robustly without potential bias due to fatigue commonly experienced by clinical pathologists. It will drastically alleviate the heavy clinical burden of daily pathology diagnosis, and improve the treatment for CRC patients. This tool is generalizable to other cancer diagnosis based on image recognition.
+
+
+
+conver_data: convert images to tfrecord format.
+
+traing: train a new patches-level model using load_inception_v3.sh
+
+predict: patient-level prediction based on whold slide images.
+         pipeline_predict.py: predict all patches in whole silde images
+         pipeline_statistics.py: patient-level prediction based on 1,2,3,4 positive pathces
+                                 and calculate statistics such as sensitivity, specificity and AUC.
+
+
+note: Before running, please reset the data path
+note: A huge dataset of pathology images for CRC will be uploaded soon. 
